@@ -192,6 +192,92 @@
 
 /* END Inspiration button Settings */
 
+
+
+/* class feature tab Settings */
+
+.charsheet div[class^="sheet-classfeature-"] { 	
+	visibility: hidden;
+	opacity: 0;
+	max-height:0;
+	overflow: hidden;
+}
+
+.charsheet input.sheet-classfeaturebarbarian:checked ~ div.sheet-classfeature-barbarian,
+.charsheet input.sheet-classfeaturebard:checked ~ div.sheet-classfeature-bard,
+.charsheet input.sheet-classfeaturecleric:checked ~ div.sheet-classfeature-cleric,
+.charsheet input.sheet-classfeaturedruid:checked ~ div.sheet-classfeature-druid,
+.charsheet input.sheet-classfeaturefighter:checked ~ div.sheet-classfeature-fighter,
+.charsheet input.sheet-classfeaturemonk:checked ~ div.sheet-classfeature-monk,
+.charsheet input.sheet-classfeaturepaladin:checked ~ div.sheet-classfeature-paladin,
+.charsheet input.sheet-classfeatureranger:checked ~ div.sheet-classfeature-ranger,
+.charsheet input.sheet-classfeaturerogue:checked ~ div.sheet-classfeature-rogue,
+.charsheet input.sheet-classfeaturesorcerer:checked ~ div.sheet-classfeature-sorcerer,
+.charsheet input.sheet-classfeaturewarlock:checked ~ div.sheet-classfeature-warlock,
+.charsheet input.sheet-classfeaturewizard:checked ~ div.sheet-classfeature-wizard
+ {
+	max-height: 999999px;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.5s linear 0s;
+}
+
+.charsheet input.sheet-classfeaturebarbarian:checked  ~ span.sheet-classfeaturebarbarian,
+.charsheet input.sheet-classfeaturebard:checked  ~ span.sheet-classfeaturebard,
+.charsheet input.sheet-classfeaturecleric:checked  ~ span.sheet-classfeaturecleric,
+.charsheet input.sheet-classfeaturedruid:checked  ~ span.sheet-classfeaturedruid,
+.charsheet input.sheet-classfeaturefighter:checked  ~ span.sheet-classfeaturefighter,
+.charsheet input.sheet-classfeaturemonk:checked  ~ span.sheet-classfeaturemonk,
+.charsheet input.sheet-classfeaturepaladin:checked  ~ span.sheet-classfeaturepaladin,
+.charsheet input.sheet-classfeatureranger:checked  ~ span.sheet-classfeatureranger,
+.charsheet input.sheet-classfeaturerogue:checked  ~ span.sheet-classfeaturerogue,
+.charsheet input.sheet-classfeaturesorcerer:checked  ~ span.sheet-classfeaturesorcerer,
+.charsheet input.sheet-classfeaturewarlock:checked  ~ span.sheet-classfeaturewarlock,
+.charsheet input.sheet-classfeaturewizard:checked  ~ span.sheet-classfeaturewizard
+ {
+    background: #879a6a;     
+    color: white;
+	border-radius: 4px;
+}
+
+.charsheet input.sheet-classfeaturetab {
+    width: 66px;
+    height: 18px;
+    cursor: pointer;
+	position: relative;
+	opacity: 0;
+    z-index: 999;
+}
+
+.charsheet span.sheet-classfeaturetab {
+    text-align: center;
+    display: inline-block;    
+    font-size: 13px;
+	background: #8c6075;
+	color: white;
+	font-weight: bold;
+	border-radius: 4px;
+	
+	width: 66px;
+    height: 18px;
+	cursor: pointer;
+	position: relative;
+	margin-left: -66px;
+}
+
+.sheet-classfeature-row {
+    border: 1px solid #000000;
+	border-radius: 12px;
+	margin-left: 1px;
+	margin-bottom: 5px;
+	background: #eee;
+}
+
+/* END class feature tab Settings */
+
+
+
+
 /* Spell Page Settings */
 .charsheet div[class^="sheet-spell-page"] { 	
 	visibility: hidden;
@@ -409,7 +495,9 @@ div[data-groupname^="repeating_classactions"] .repitem,
 }
 
 .charsheet .sheet-spell-row-number,
-.charsheet .sheet-inventory-row-number {
+.charsheet .sheet-inventory-row-number,
+.charsheet .sheet-classfeature-startlvl
+ {
 	text-align: center;
 	font-weight: bold;
 }
@@ -641,6 +729,15 @@ div[data-groupname^="repeating_classactions"] .repitem,
 	text-align: center;
 	font-family: Arial;
 	font-size: 10px;
+}
+
+.charsheet .sheet-classfeature-note {
+	font-family: Arial;
+	font-size: 10px;
+}
+
+.charsheet .sheet-warning {
+	color: red;
 }
 
 .charsheet select {
