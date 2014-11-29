@@ -1027,6 +1027,7 @@
 					
 					
 					<!-- TEMPLATE -->
+					<!--
 					<div class="sheet-classfeature-bard sheet-classfeature-row">
 						
 						<div class="sheet-row sheet-margin-top sheet-margin-bottom">
@@ -1038,6 +1039,8 @@
 						</div>
 					
 					</div>
+					
+				-->
 					
 					<!-- Unarmoured defense (Barbarian) -->
 					<div class="sheet-classfeature-barbarian sheet-classfeature-row">
@@ -1066,13 +1069,13 @@
 									<div class="sheet-col-1-4 sheet-small-label sheet-center">
 										<input class="sheet-underlined" type="number" name="attr_rage_usage" value="0" >
 										<br />
-										Rage Used
+										Used
 									</div>
 									
 									<div class="sheet-col-1-4 sheet-small-label sheet-center">
 										<input class="sheet-underlined" type="number" name="attr_rage_usage_max" value="( (ceil((@{barbarian_level})/1e10)*2) + (ceil((@{barbarian_level}-2)/1e10)) + (ceil((@{barbarian_level}-5)/1e10)) + (ceil((@{barbarian_level}-11)/1e10)) + (ceil((@{barbarian_level}-16)/1e10)) + (ceil((@{barbarian_level}-19)/1e10)*93) )" disabled="disabled">
 										<br />
-										Rage Max
+										Max
 									</div>
 									
 									<div class="sheet-col-1-4 sheet-small-label sheet-center">
@@ -1092,7 +1095,105 @@
 							</div>
 							
 						</div>
+					</div>
+						
+						
+					<!-- Bardic Inspiration (Bard) -->
+					<div class="sheet-classfeature-bard sheet-classfeature-row">
+						
+						<div class="sheet-row sheet-margin-top sheet-margin-bottom">
+						
+							<div class="sheet-col-1-12 sheet-vert-middle sheet-classfeature-startlvl">1</div>
+							<div class="sheet-col-1-6 sheet-vert-middle sheet-center">Bardic Inspiration</div>
+							<div class="sheet-col-1-6 sheet-vert-middle sheet-center">Bard</div>
+							<div class="sheet-col-13-24 sheet-offset-1-24 sheet-vert-middle">
+								<div class="sheet-row">
+								
+									<div class="sheet-col-1-4 sheet-small-label sheet-center">
+										<input class="sheet-underlined" type="number" name="attr_bardicinspiration_usage" value="0" >
+										<br />
+										Used
+									</div>
+									
+									<div class="sheet-col-1-4 sheet-small-label sheet-center">
+										<input class="sheet-underlined" type="number" name="attr_bardicinspiration_usage_max" value="(ceil((@{bard_level})/1e10)*@{charisma_mod})" disabled="disabled">
+										<br />
+										Max
+									</div>
+									
+									<div class="sheet-col-1-4 sheet-small-label sheet-center">
+										<input class="sheet-underlined" type="number" name="attr_bardicinspiration_die" value="( (ceil((@{bard_level})/1e10)*6) + (ceil((@{bard_level}-4)/1e10)*2) + (ceil((@{bard_level}-9)/1e10)*2) + (ceil((@{bard_level}-14)/1e10)*2) )" disabled="disabled">
+										<br />
+										Bardic Inspiration Die
+									</div>
+									
+									<div class="sheet-col-1-4 sheet-center">
+										<button type="roll" class="sheet-roll" name="roll_BardicInspiration" value="/em inspires a friend\n\nTarget within 60ft than can hear you gains a single use of a bardic inspiration die (1d[[@{bardicinspiration_die}]]) to use as a bonus to a single ability check, saving throw, or attack roll within the next 10 mins">Use</button>
+									</div>
+
+								</div>
+								
+								<p class="sheet-classfeature-note">Bardic Inspiration usage resets after a long rest (or a short rest if bard level is 5 or higher)</p>
+								
+							</div>
+							
+						</div>
+						
+					</div>
 					
+					<!-- Jack of all trades (Bard) -->
+					<div class="sheet-classfeature-bard sheet-classfeature-row">
+						
+						<div class="sheet-row sheet-margin-top sheet-margin-bottom">
+						
+							<div class="sheet-col-1-12 sheet-vert-middle sheet-classfeature-startlvl">2</div>
+							<div class="sheet-col-1-6 sheet-vert-middle sheet-center">Jack of All Trades</div>
+							<div class="sheet-col-1-6 sheet-vert-middle sheet-center">Bard</div>
+							<div class="sheet-col-13-24 sheet-offset-1-24 sheet-vert-middle">In the skills section of the sheet, set any skills you are not currently proficient or expert with to "Jack of all trades"</div>
+						</div>
+					
+					</div>
+					
+					<!-- Song of Rest (Bard) -->
+					<div class="sheet-classfeature-bard sheet-classfeature-row">
+						
+						<div class="sheet-row sheet-margin-top sheet-margin-bottom">
+						
+							<div class="sheet-col-1-12 sheet-vert-middle sheet-classfeature-startlvl">2</div>
+							<div class="sheet-col-1-6 sheet-vert-middle sheet-center">Song of Rest</div>
+							<div class="sheet-col-1-6 sheet-vert-middle sheet-center">Bard</div>
+							<div class="sheet-col-13-24 sheet-offset-1-24 sheet-vert-middle">
+								
+								
+								<p class="sheet-classfeature-note">Use the roll button that corresponds to your bard level</p>
+								<div class="sheet-row">
+																	
+									<div class="sheet-col-1-4 sheet-center">
+										<button type="roll" class="sheet-roll" name="roll_SongOfRest2-8" value="/em helps wounded allies recover thanks to a Song of Rest\n\nFriendly creatures that can hear your song and who recover hp during this short rest, will recover a bonus [[1d6]] hp">Level 2-8</button>
+									</div>
+									
+									<div class="sheet-col-1-4 sheet-center">
+										<button type="roll" class="sheet-roll" name="roll_SongOfRest9-12" value="/em helps wounded allies recover thanks to a Song of Rest\n\nFriendly creatures that can hear your song and who recover hp during this short rest, will recover a bonus [[1d8]] hp">Level 9-12</button>
+									</div>
+									
+									<div class="sheet-col-1-4 sheet-center">
+										<button type="roll" class="sheet-roll" name="roll_SongOfRest13-16" value="/em helps wounded allies recover thanks to a Song of Rest\n\nFriendly creatures that can hear your song and who recover hp during this short rest, will recover a bonus [[1d10]] hp">Level 13-16</button>
+									</div>
+									
+									<div class="sheet-col-1-4 sheet-center">
+										<button type="roll" class="sheet-roll" name="roll_SongOfRest17-20" value="/em helps wounded allies recover thanks to a Song of Rest\n\nFriendly creatures that can hear your song and who recover hp during this short rest, will recover a bonus [[1d12]] hp">Level 17+</button>
+									</div>
+
+								</div>
+								
+								
+								
+								
+								
+							</div>
+							
+						</div>
+						
 					</div>
 					
 
